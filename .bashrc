@@ -6,24 +6,7 @@ eval "$(hub alias -s)"
 # ALIASES
 
 # Quick links
-alias cdw='cd ~/Work'
 alias cds='cd ~/Sites'
-alias cdl='cd ~/Work/lbs'
-alias cdf='cd ~/Sites/frails'
-alias cdi='cd ~/Sites/ivanish'
-
-# clean before compiling
-# rlwrap figwheel, please
-alias fig='lein clean && rlwrap lein figwheel'
-
-# Make it easy to compile SCSS in my CLJS projects
-alias s='sass --watch scss:resources/public/styles --precision 1 --style compressed'
-
-# Make it easy to compile coffeescript
-alias c='coffee -wc .'
-
-# A nice shortcut for pushing a WIP to github and taking a look at it
-alias wip='git aa && git cim "WIP" && git push && hub browse'
 
 # Correct some common git typos
 alias gits='git s'
@@ -33,13 +16,6 @@ alias gitra='git ra'
 
 # Use my custom ls
 alias ls='ls -laG'
-
-# Keep rails handy
-alias r="rails"
-
-# We sure like our specs
-alias rspec='rspec -c' # Color
-
 
 # PATHS & VARS
 
@@ -54,13 +30,6 @@ export PATH=$PATH:/usr/local/share/npm/bin
 
 # Heroku
 export PATH=$PATH:/usr/local/heroku/bin
-
-# Postgres.app
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin
-export PGDATA="/Users/admin/Library/Application Support/Postgres/var-9.6"
-
-# Java
-export JAVA_HOME=$(/usr/libexec/java_home)
 
 # rbenv: To use Homebrew's directories rather than ~/.rbenv
 export RBENV_ROOT=/usr/local/var/rbenv
@@ -95,7 +64,7 @@ for option in autocd globstar; do
 done
 
 # Set a minimal prompt
-export PS1="\W 🐌  "
+export PS1="\W 🦄  "
 
 # Can't remember what this does
 source ~/.bin/git-completion.bash

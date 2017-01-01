@@ -1,6 +1,6 @@
 [user]
-  name = Ivan Reese
-  email = ivanreese@gmail.com
+  name = Freyja Ulveland
+  email = fulveland@gmail.com
 
 [diff]
 
@@ -9,8 +9,6 @@
 
 [alias]
   p = push
-  ph = push heroku
-  pp = push production
   s = status
   ci = commit
   cim = commit -m
@@ -19,10 +17,6 @@
   dc = diff --cached
   amend = commit --amend -C HEAD
   aa = add --all
-  ff = merge --ff-only
-  pullff = pull --ff-only
-  noff = merge --no-ff
-  fa = fetch --all
   b = branch
   ds = diff --stat=160,120
   dh1 = diff HEAD~1
