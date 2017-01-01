@@ -7,6 +7,7 @@ eval "$(hub alias -s)"
 
 # Quick links
 alias cds='cd ~/Sites'
+alias cdf='cd ~/Sites/floraonfauna'
 
 # Correct some common git typos
 alias gits='git s'
