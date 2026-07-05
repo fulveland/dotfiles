@@ -3,8 +3,7 @@ These are my dotfiles and other stuff I'll want whenever I move in to a fresh sy
 
 ### Pull changes for stuff that might change due to external causes
 ```bash
-cp ~/.hyper.css ~/.dotfiles/.hyper.css
-cp ~/.hyper.js ~/.dotfiles/.hyper.js
+cp ~/.npmrc ~/.dotfiles/.npmrc
 ```
 
 ### New Machine Setup
@@ -68,18 +67,18 @@ gem install rails
 rbenv rehash
 
 # Now set up the dotfiles
-# If hub asks for credentials, username is `ivanreese`
+# If hub asks for credentials, username is `fulveland`
 # For password, you have to use a token: https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token
 # The token issue is explained here: https://github.com/github/hub/issues/2655
 # Note that hub is no longer officially supported, so it might break in the future
-hub clone git@github.com:ivanreese/dotfiles.git ~/.dotfiles
+hub clone git@github.com:fulveland/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 source bootstrap.sh
 
-# If desired, interactively set up my defaults
-bash ivans-defaults.sh
+# If desired, interactively set up ivy's defaults
+bash ivys-defaults.sh
 
-# Disable spotlight
+# Disable spotlight?
 sudo mdutil -a -i off
 # Also do LaunchBar > Index > Show Index > Applications > Options > Use Spotlight index: off
 ```
