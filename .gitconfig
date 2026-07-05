@@ -1,6 +1,6 @@
 [user]
-  name = Ivan Reese
-  email = ivanreese@gmail.com
+  name = Freyja Ulveland
+  email = fulveland@gmail.com
 
 [diff]
 
@@ -9,8 +9,6 @@
 
 [alias]
   p = push
-  ph = push heroku
-  pp = push production
   s = status
   ci = commit
   cia = commit --amend --no-edit
@@ -50,7 +48,7 @@
   tool = vimdiff
 
 [core]
-  editor = nova
+  editor = code
   excludesfile = ~/.gitignore_global
 
 [credential]
@@ -61,6 +59,7 @@
 
 [push]
   default = simple
+  autoSetupRemote = true
 
 [pager]
   diff = diff-so-fancy | less --tabs=1,5 -RFX

@@ -6,29 +6,16 @@
 
 alias cat='bat'
 alias find='fd'
-alias help='tldr'
-alias ls='exa --all --long --color-scale --git'
+alias ls='eza --all --long'
 alias ping='prettyping --nolegend'
 
 # Quick links
-alias cdc='cd ~/Work/visual-programming-codex'
 alias cdd='cd ~/.dotfiles'
-alias cdf='cd ~/Work/futureofcoding.org'
-alias cdh='cd ~/Work/hest/prototypes/009-open'
-alias cdi='cd ~/Sites/ivanish'
-alias cdl='cd ~/Work/lbs'
-alias cdr='cd ~/Work/reanimator'
 alias cds='cd ~/Sites'
-alias cdw='cd ~/Work'
-alias cdy='cd ~/Work/hyperzine'
 
 # Quick Tools
-alias a="nova ." # Old habits die hard
 alias c="cake"
 alias cs="cake start"
-alias n="nova ."
-alias r="rails"
-alias rc="rails c"
 
 # A nice shortcut for pushing a WIP to github
 alias wip='git aa && git cim "∆" && git push'
@@ -51,21 +38,20 @@ alias gitra='git ra'
 
 # PATHS & VARS
 
+# Prepend brew
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 # Append bins in my home
 export PATH="$PATH:~/.bin"
 
-# Append Postgres.app
-export PATH="$PATH:/Applications/Postgres.app/Contents/Versions/latest/bin"
-export PGDATA="/Users/admin/Library/Application Support/Postgres/var-14"
-
-# We need to prepend bins in homebrew so that brew comes before ruby (so we can use dart sass via brew instead of ruby sass)
-export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
-
-# Prepend sbins in homebrew
-export PATH="/opt/homebrew/sbin:/usr/local/sbin:$PATH"
-
 # Prepend npm global
 export PATH="$(npm config get prefix):$PATH"
+
+# Prepend user local bins
+export PATH="$HOME/.local/bin:$PATH"
+
+# Prepend manually-installed bins
+export PATH="$HOME/.bin:$PATH"
 
 # Prepend bins in the pwd
 export PATH=".:$PATH"
@@ -82,7 +68,7 @@ export HISTCONTROL=erasedups
 export HISTSIZE=10000
 
 # Set a minimal prompt
-export PS1="\W "
+export PS1="\W 🦄  "
 
 # BASH OPTIONS
 
@@ -94,26 +80,6 @@ shopt -s nocaseglob
 
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell
-
-# Add nice shell titles for Hyper — https://github.com/zeit/hyper/issues/1188#issuecomment-267301723
-case "$TERM" in
-xterm*|rxvt*)
-    PROMPT_COMMAND='echo -ne "\033]0;${PWD##*/}\007"'
-    show_command_in_title_bar()
-    {
-        case "$BASH_COMMAND" in
-            *\033]0*)
-                ;;
-            *)
-                echo -ne "\033]0;${BASH_COMMAND} - ${PWD##*/}\007"
-                ;;
-        esac
-    }
-    trap show_command_in_title_bar DEBUG
-    ;;
-*)
-    ;;
-esac
 
 # Set up hub
 eval "$(hub alias -s)"
